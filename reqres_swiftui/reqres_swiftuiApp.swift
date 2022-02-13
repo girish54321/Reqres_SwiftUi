@@ -11,7 +11,8 @@ import SwiftUI
 struct reqres_swiftuiApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            HomeScreen()
         }
     }
 }
