@@ -41,7 +41,7 @@ struct UserListItem: View {
 struct UserListItem_Previews: PreviewProvider {
     static var previews: some View {
         UserListItem(userNmae: "DEMO", email: "DEMO", imageUrl: "https://reqres.in/img/faces/1-image.jpg")
-            .previewLayout(.sizeThatFits)
+            .previewLayout(.fixed(width: 300, height: 100))
             .padding()
     }
 }
