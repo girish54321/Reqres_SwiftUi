@@ -1,0 +1,16 @@
+PODS:
+  - FloatingLabelTextFieldSwiftUI (4.2.1)
+
+DEPENDENCIES:
+  - FloatingLabelTextFieldSwiftUI
+
+SPEC REPOS:
+  trunk:
+    - FloatingLabelTextFieldSwiftUI
+
+SPEC CHECKSUMS:
+  FloatingLabelTextFieldSwiftUI: 28c373de56a07ce49318bdeeed18781ee6f2528f
+
+PODFILE CHECKSUM: 058d94acd381a6ec50900131e5f95becac76d7f9
+
+COCOAPODS: 1.11.2

@@ -1,5 +1,5 @@
 //
-//  LoginScreen.swift
+//  CreateAccountScreen.swift
 //  reqres_swiftui
 //
 //  Created by Apple on 16/02/22.
@@ -8,13 +8,13 @@
 import SwiftUI
 import FloatingLabelTextFieldSwiftUI
 
-struct LoginScreen: View {
+struct CreateAccountScreen: View {
     
     @State private var emailText: String = ""
     @State private var firstName: String = ""
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             VStack(alignment: .center, spacing: 4) {
                 VStack(alignment: .center,spacing: 8) {
                     Text("ReqRes App")
@@ -58,15 +58,14 @@ struct LoginScreen: View {
                 }
             }
             .padding()
-            .navigationBarTitleDisplayMode(.large)
-            .navigationTitle("Login")
-        }
-        
+            .navigationTitle("Create Account")
+//        }
+//        .navigationTitle("Create Account")
     }
 }
 
-struct LoginScreen_Previews: PreviewProvider {
+struct CreateAccountScreen_Previews: PreviewProvider {
     static var previews: some View {
-        LoginScreen().previewDisplayName("iPhone 11")
+        CreateAccountScreen()
     }
 }
