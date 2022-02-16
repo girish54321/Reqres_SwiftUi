@@ -13,11 +13,7 @@ struct UserListItem: View {
     var imageUrl : String
     var body: some View {
         HStack(alignment: .center, spacing: 8) {
-            AsyncImage(url: URL(string: imageUrl)) { image in
-                image.resizable()
-            } placeholder: {
-                ProgressView()
-            }
+            AppNetworkImage(imageUrl: imageUrl)
             .frame(width: 65, height: 65)
             .clipShape(
               RoundedRectangle(cornerRadius: 12)
