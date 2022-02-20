@@ -43,7 +43,9 @@ struct CreateAccountScreen: View {
                 Button(action: {
                     
                 }) {
-                    AppButton(buttonText: "Login")
+                    AppButton(text: "Login",clicked: {
+                        
+                    })
                 }
                 Spacer()
                 NavigationLink(destination: CreateAccountScreen()) {
