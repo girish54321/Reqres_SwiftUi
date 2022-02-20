@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1810B3CA27BE3F67006C3BDD /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1810B3C927BE3F67006C3BDD /* AppButton.swift */; };
 		1849957B27BD2CA500E7304E /* AppInputText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1849957A27BD2CA500E7304E /* AppInputText.swift */; };
 		1849957D27BD337800E7304E /* CreateAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1849957C27BD337800E7304E /* CreateAccountScreen.swift */; };
 		18F3110F27BCF07100335590 /* AppNetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3110E27BCF07100335590 /* AppNetworkImage.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		06EE53FD3C9211E62C92A802 /* Pods-reqres_swiftui.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reqres_swiftui.release.xcconfig"; path = "Target Support Files/Pods-reqres_swiftui/Pods-reqres_swiftui.release.xcconfig"; sourceTree = "<group>"; };
+		1810B3C927BE3F67006C3BDD /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		1849957A27BD2CA500E7304E /* AppInputText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInputText.swift; sourceTree = "<group>"; };
 		1849957C27BD337800E7304E /* CreateAccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountScreen.swift; sourceTree = "<group>"; };
 		18F3110E27BCF07100335590 /* AppNetworkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNetworkImage.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				F443AB2527B93AF000762E38 /* userListItem.swift */,
 				18F3110E27BCF07100335590 /* AppNetworkImage.swift */,
 				1849957A27BD2CA500E7304E /* AppInputText.swift */,
+				1810B3C927BE3F67006C3BDD /* AppButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				F443AB3627B93CFF00762E38 /* CodableBundleExtension.swift in Sources */,
 				F4CE8FEA27B93598007BCF37 /* ContentView.swift in Sources */,
 				18F3111127BD130300335590 /* LoginScreen.swift in Sources */,
+				1810B3CA27BE3F67006C3BDD /* AppButton.swift in Sources */,
 				F443AB3827B93D5A00762E38 /* UserListModal.swift in Sources */,
 				F4CE8FE827B93598007BCF37 /* reqres_swiftuiApp.swift in Sources */,
 				1849957B27BD2CA500E7304E /* AppInputText.swift in Sources */,

@@ -11,7 +11,8 @@ import FloatingLabelTextFieldSwiftUI
 struct LoginScreen: View {
     
     @State private var emailText: String = ""
-    @State private var firstName: String = ""
+    @State private var passwordText: String = ""
+    @State private var isPasswordShow: Bool = false
     
     var body: some View {
         NavigationView {
@@ -26,35 +27,41 @@ struct LoginScreen: View {
                 }
                 .padding(.bottom)
                 FloatingLabelTextField(
-                    $firstName, placeholder: "Password",
+                    $emailText, placeholder: "Email",
                     editingChanged: { (isChanged) in
                         
                     }) {
                     }
-                    .textModifier()
+                    .floatingStyle(ThemeTextFieldStyle())
+                    .frame(height: 70)
                 FloatingLabelTextField(
-                    $firstName, placeholder: "Password",
+                    $passwordText, placeholder: "Password",
                     editingChanged: { (isChanged) in
                         
                     }) {
                     }
-                    .textModifier()
+                    .rightView({
+                        Button(action: {
+                            withAnimation {
+                                self.isPasswordShow.toggle()
+                            }
+                            
+                        }) {
+                            Image(systemName:self.isPasswordShow ? "eye" : "eye")
+                        }
+                    })
+                    .isSecureTextEntry(true)
+                    .floatingStyle(ThemeTextFieldStyle())
+                    .frame(height: 70)
                 Button(action: {
-                    
+                    print(emailText)
+                    print(passwordText)
                 }) {
-                    HStack {
-                        Image(systemName: "plus.circle")
-                        Text("Add new item")
-                    }
-                    .padding(12)
-                    .background(Color.accentColor)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
-                    .padding(.top)
+                    AppButton(buttonText: "Login")
                 }
                 Spacer()
                 NavigationLink(destination: CreateAccountScreen()) {
-                  Text("Create Account")
+                    Text("Create Account")
                 }
             }
             .padding()

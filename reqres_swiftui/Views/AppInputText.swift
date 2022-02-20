@@ -8,13 +8,24 @@
 import SwiftUI
 import FloatingLabelTextFieldSwiftUI
 
-extension FloatingLabelTextField {
-    func textModifier() -> some View {
-        self
+//extension FloatingLabelTextField {
+//    func textModifier() -> some View {
+//        self
+//            .titleColor(Color.accentColor)
+//            .selectedLineColor(Color.accentColor)
+//            .selectedTextColor(.blue)
+//            .selectedTitleColor(Color.accentColor)
+//            .frame(height: 70)
+//    }
+//}
+
+
+struct ThemeTextFieldStyle: FloatingLabelTextFieldStyle {
+    func body(content: FloatingLabelTextField) -> FloatingLabelTextField {
+        content
             .titleColor(Color.accentColor)
             .selectedLineColor(Color.accentColor)
             .selectedTextColor(.blue)
             .selectedTitleColor(Color.accentColor)
-            .frame(height: 70)
     }
 }

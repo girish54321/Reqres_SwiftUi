@@ -14,7 +14,6 @@ struct CreateAccountScreen: View {
     @State private var firstName: String = ""
     
     var body: some View {
-//        NavigationView {
             VStack(alignment: .center, spacing: 4) {
                 VStack(alignment: .center,spacing: 8) {
                     Text("ReqRes App")
@@ -31,26 +30,20 @@ struct CreateAccountScreen: View {
                         
                     }) {
                     }
-                    .textModifier()
+                    .floatingStyle(ThemeTextFieldStyle())
+                    .frame(height: 70)
                 FloatingLabelTextField(
                     $firstName, placeholder: "Password",
                     editingChanged: { (isChanged) in
                         
                     }) {
                     }
-                    .textModifier()
+                    .floatingStyle(ThemeTextFieldStyle())
+                    .frame(height: 70)
                 Button(action: {
                     
                 }) {
-                    HStack {
-                        Image(systemName: "plus.circle")
-                        Text("Add new item")
-                    }
-                    .padding(12)
-                    .background(Color.accentColor)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
-                    .padding(.top)
+                    AppButton(buttonText: "Login")
                 }
                 Spacer()
                 NavigationLink(destination: CreateAccountScreen()) {
@@ -59,8 +52,6 @@ struct CreateAccountScreen: View {
             }
             .padding()
             .navigationTitle("Create Account")
-//        }
-//        .navigationTitle("Create Account")
     }
 }
 
