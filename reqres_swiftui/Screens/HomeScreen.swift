@@ -10,7 +10,6 @@ import SwiftUI
 struct HomeScreen: View {
     let data: UserListResponse = Bundle.main.decode("userlist.json")
     var body: some View {
-        NavigationView {
             List{
                 ForEach(data.data!) { item in
                     NavigationLink(destination: Userinfo(hey: item)) {
@@ -20,7 +19,6 @@ struct HomeScreen: View {
                 
             }
             .navigationBarTitle("Home", displayMode: .automatic)
-        }
     }
 }
 

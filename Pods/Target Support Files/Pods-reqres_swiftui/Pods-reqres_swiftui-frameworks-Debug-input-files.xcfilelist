@@ -1,2 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-reqres_swiftui/Pods-reqres_swiftui-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/FloatingLabelTextFieldSwiftUI/FloatingLabelTextFieldSwiftUI.framework
+${BUILT_PRODUCTS_DIR}/NavigationStack/NavigationStack.framework

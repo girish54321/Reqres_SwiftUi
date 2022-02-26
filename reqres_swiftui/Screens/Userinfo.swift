@@ -7,23 +7,6 @@
 
 import SwiftUI
 
-extension Image {
-  func imageModifier() -> some View {
-    self
-      .resizable()
-      .scaledToFit()
-      .clipShape(Circle())
-  }
-  
-  func iconModifier() -> some View {
-    self
-      .imageModifier()
-      .frame(maxWidth: 128)
-      .foregroundColor(.purple)
-      .opacity(0.5)
-  }
-}
-
 struct Userinfo: View {
     var hey : UserListResponseData
     @State private var isAnimation = false
@@ -37,27 +20,21 @@ struct Userinfo: View {
             .frame(width: 120, height: 120)
             }
 //            .offset(x: 0, y: isAnimation ? 0 : -525)
-            .overlay(
-                Circle().stroke(.black)
-                    .scaleEffect(animationAmout)
-                    .opacity(2 - animationAmout)
-                    .animation(
-                        .easeOut(duration: 0.8)
-                            .repeatForever(autoreverses: false),
-                        value: animationAmout)
-            )
+//            .overlay(
+//                Circle().stroke(.black)
+//                    .scaleEffect(animationAmout)
+//                    .opacity(2 - animationAmout)
+//                    .animation(
+//                        .easeOut(duration: 0.8)
+//                            .repeatForever(autoreverses: false),
+//                        value: animationAmout)
+//            )
 //            .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0.25), value: isAnimation)
             .onAppear{
                 print("gogogo")
                 isAnimation = true
                 animationAmout = 2.0
             }
-//            HStack {
-//                Image(systemName: "ant.circle.fill").iconModifier()
-//            .frame(width: 120, height: 120)
-//            }
-//            .offset(x: 0, y: isAnimation ? 0 : -525)
-//            .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0.25), value: isAnimation)
           VStack(alignment: .center, spacing: 5) {
               Text(hey.first_name!)
               .font(.title2)
