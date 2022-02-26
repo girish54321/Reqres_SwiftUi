@@ -11,6 +11,7 @@ import SwiftUI
 struct SplashScreen: View {
     
     @State private var selection: String? = nil
+    @EnvironmentObject var viewModel: AlertViewModel
     
     var body: some View {
         NavigationView {
@@ -41,7 +42,7 @@ struct SplashScreen: View {
                                   whiteButton: true,
                                   clicked: {
                             selection = "A"
-                           
+                            
                         })
                         AppButton(text: "Sign Up",
                                   clicked: {
@@ -53,7 +54,9 @@ struct SplashScreen: View {
                 .offset(x: 0, y: 190)
             }
         }
-        
+        .toast(isPresenting: $viewModel.show){
+            viewModel.alertToast
+        }
     }
 }
 

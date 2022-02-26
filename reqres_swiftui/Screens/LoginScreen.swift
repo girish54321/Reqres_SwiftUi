@@ -8,6 +8,7 @@
 import SwiftUI
 import FloatingLabelTextFieldSwiftUI
 import Alamofire
+import AlertToast
 
 struct LoginScreen: View {
     
@@ -19,6 +20,8 @@ struct LoginScreen: View {
     @State private var selection: String? = nil
     
     @State private var logedIn = false
+    
+    @EnvironmentObject var viewModel: AlertViewModel
     
     var body: some View {
         VStack(alignment: .center, spacing: 4) {
@@ -96,8 +99,10 @@ struct LoginScreen: View {
                 print(passwordText)
             }) {
                 AppButton(text: "Login", clicked: {
-                    //                       selection = "MainApp"
-                    UserLoginApi(email: emailText, password: passwordText)
+//                    viewModel.alertToast = AlertToast(type: .complete(.green), title: "Completed!", subTitle: nil)
+//                    viewModel.alertToast =  AlertToast(type: .regular, title: "Some Text", subTitle: "Some Text")
+                    
+                    viewModel.alertToast = AlertToast(displayMode: .banner(.slide), type: .regular, title: "Message Sent!")
                 })
             }
             .padding(.top,16)

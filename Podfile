@@ -7,6 +7,7 @@ target 'reqres_swiftui' do
   pod 'FloatingLabelTextFieldSwiftUI'
   pod 'NavigationStack'
   pod 'Alamofire'
+  pod 'AlertToast'
   # Pods for reqres_swiftui
 
 end

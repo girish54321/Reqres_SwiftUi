@@ -15,6 +15,8 @@ struct reqres_swiftuiApp: App {
 //            HomeScreen()
 //            LoginScreen()
             SplashScreen()
+                .environmentObject(AlertViewModel())
         }
+        
     }
 }

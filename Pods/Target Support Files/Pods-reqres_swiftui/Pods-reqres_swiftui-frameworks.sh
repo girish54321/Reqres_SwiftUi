@@ -177,11 +177,13 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AlertToast/AlertToast.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FloatingLabelTextFieldSwiftUI/FloatingLabelTextFieldSwiftUI.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/NavigationStack/NavigationStack.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AlertToast/AlertToast.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FloatingLabelTextFieldSwiftUI/FloatingLabelTextFieldSwiftUI.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/NavigationStack/NavigationStack.framework"
 fi
