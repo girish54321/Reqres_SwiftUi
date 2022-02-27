@@ -12,6 +12,7 @@ import AlertToast
 
 struct HomeScreen: View {
     @State var userList: UserListResponse? = nil
+    @State var responseData: UserListResponse? = nil
     
     @EnvironmentObject var viewModel: AlertViewModel
     @EnvironmentObject var appStateStorage: AppStateStorage
@@ -19,8 +20,9 @@ struct HomeScreen: View {
     @AppStorage(AppConst.isLogedIn) var isLogedIn: Bool = false
     
     @State private var selection: String? = nil
-    
+    @State private var searchText = ""
     @State private var isAnimating: Bool = false
+    @State var didAppear = false
     
     var body: some View {
         NavigationView {
@@ -36,7 +38,10 @@ struct HomeScreen: View {
                     }
                 }
                 .onAppear(perform: {
-                    getUserList()
+                    if !didAppear {
+                        getUserList()
+                    }
+                    didAppear = true
                 })
                 .navigationBarTitle("My Friends", displayMode: .automatic)
                 .alert(isPresented: $showinglogOutAlert) {
@@ -61,6 +66,19 @@ struct HomeScreen: View {
                 }
             }
             .opacity(isAnimating ? 1 : 0)
+            .searchable(text: $searchText)
+            .onChange(of: searchText, perform: {newValue in
+                if(newValue.count < 0 || searchText == ""){
+                    withAnimation {
+                        userList?.data = responseData?.data
+                    }
+                    return
+                }
+                let newArray = responseData?.data?.filter({ return $0.first_name?.contains(newValue) as! Bool })
+                withAnimation{
+                    userList?.data = newArray
+                }
+            })
             .onAppear(perform: {
                 withAnimation{
                     isAnimating = true
@@ -70,6 +88,7 @@ struct HomeScreen: View {
     }
     
     func getUserList() {
+        print("do api call")
         viewModel.alertToast = AppMessage.loadindView
         let parameters: [String: Any] = [
             "page":"1",
@@ -77,11 +96,12 @@ struct HomeScreen: View {
         ]
         AF.request(AppConst.baseurl+AppConst.usersListUrl,method: .get,parameters: parameters).validate().responseDecodable(of: UserListResponse.self) { (response) in
             if ApiError.checkApiError(response: response.response!){
-                guard let responseData = try? JSONDecoder().decode(UserListResponse.self, from: response.data! ) else {
+                guard let response = try? JSONDecoder().decode(UserListResponse.self, from: response.data! ) else {
                     print("Error: Couldn't decode data into LoginResponse")
                     return
                 }
-                userList = responseData
+                userList = response
+                responseData = response
                 viewModel.show = false
             }
         }
