@@ -14,6 +14,7 @@
 		18F3111127BD130300335590 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3111027BD130300335590 /* LoginScreen.swift */; };
 		71453E3068EF1753EE118FE8 /* Pods_reqres_swiftui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE44542C1C0230BE66163820 /* Pods_reqres_swiftui.framework */; };
 		F4124BA127CA4C6000D43E71 /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4124BA027CA4C6000D43E71 /* AppConst.swift */; };
+		F41EC4CF27CB75A400CC081B /* GlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41EC4CE27CB75A400CC081B /* GlobalState.swift */; };
 		F426766B27C276B5004FDE3F /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426766A27C276B5004FDE3F /* SplashScreen.swift */; };
 		F443AB2627B93AF000762E38 /* userListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AB2527B93AF000762E38 /* userListItem.swift */; };
 		F443AB2927B93BBD00762E38 /* userlist.json in Resources */ = {isa = PBXBuildFile; fileRef = F443AB2827B93BBD00762E38 /* userlist.json */; };
@@ -24,7 +25,6 @@
 		F48CA81927CA6BCD007124FF /* AuthModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CA81827CA6BCD007124FF /* AuthModal.swift */; };
 		F4A64FAA27CA29D700DD68B7 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A64FA927CA29D700DD68B7 /* UIHelper.swift */; };
 		F4CE8FE827B93598007BCF37 /* reqres_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE8FE727B93598007BCF37 /* reqres_swiftuiApp.swift */; };
-		F4CE8FEA27B93598007BCF37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE8FE927B93598007BCF37 /* ContentView.swift */; };
 		F4CE8FEC27B9359A007BCF37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4CE8FEB27B9359A007BCF37 /* Assets.xcassets */; };
 		F4CE8FEF27B9359A007BCF37 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4CE8FEE27B9359A007BCF37 /* Preview Assets.xcassets */; };
 		F4CE8FF827B935CD007BCF37 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE8FF727B935CD007BCF37 /* HomeScreen.swift */; };
@@ -40,6 +40,7 @@
 		918F7F63D0EC9511222C10CA /* Pods-reqres_swiftui.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reqres_swiftui.debug.xcconfig"; path = "Target Support Files/Pods-reqres_swiftui/Pods-reqres_swiftui.debug.xcconfig"; sourceTree = "<group>"; };
 		DE44542C1C0230BE66163820 /* Pods_reqres_swiftui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_reqres_swiftui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4124BA027CA4C6000D43E71 /* AppConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
+		F41EC4CE27CB75A400CC081B /* GlobalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalState.swift; sourceTree = "<group>"; };
 		F426766A27C276B5004FDE3F /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		F443AB2527B93AF000762E38 /* userListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userListItem.swift; sourceTree = "<group>"; };
 		F443AB2827B93BBD00762E38 /* userlist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = userlist.json; sourceTree = "<group>"; };
@@ -51,7 +52,6 @@
 		F4A64FA927CA29D700DD68B7 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		F4CE8FE427B93598007BCF37 /* reqres_swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reqres_swiftui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4CE8FE727B93598007BCF37 /* reqres_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reqres_swiftuiApp.swift; sourceTree = "<group>"; };
-		F4CE8FE927B93598007BCF37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F4CE8FEB27B9359A007BCF37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4CE8FEE27B9359A007BCF37 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F4CE8FF727B935CD007BCF37 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
@@ -84,6 +84,14 @@
 				06EE53FD3C9211E62C92A802 /* Pods-reqres_swiftui.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F41EC4CD27CB757500CC081B /* GlobalState */ = {
+			isa = PBXGroup;
+			children = (
+				F41EC4CE27CB75A400CC081B /* GlobalState.swift */,
+			);
+			path = GlobalState;
 			sourceTree = "<group>";
 		};
 		F443AB2727B93BB200762E38 /* Data */ = {
@@ -135,13 +143,13 @@
 		F4CE8FE627B93598007BCF37 /* reqres_swiftui */ = {
 			isa = PBXGroup;
 			children = (
+				F41EC4CD27CB757500CC081B /* GlobalState */,
 				F48CA81527CA67AA007124FF /* Networking */,
 				F443AB3427B93CF300762E38 /* Helper */,
 				F443AB2727B93BB200762E38 /* Data */,
 				F4CE8FF627B935B7007BCF37 /* Views */,
 				F4CE8FF527B935A8007BCF37 /* Screens */,
 				F4CE8FE727B93598007BCF37 /* reqres_swiftuiApp.swift */,
-				F4CE8FE927B93598007BCF37 /* ContentView.swift */,
 				F4CE8FEB27B9359A007BCF37 /* Assets.xcassets */,
 				F4CE8FED27B9359A007BCF37 /* Preview Content */,
 			);
@@ -295,7 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F443AB3627B93CFF00762E38 /* CodableBundleExtension.swift in Sources */,
-				F4CE8FEA27B93598007BCF37 /* ContentView.swift in Sources */,
+				F41EC4CF27CB75A400CC081B /* GlobalState.swift in Sources */,
 				18F3111127BD130300335590 /* LoginScreen.swift in Sources */,
 				1810B3CA27BE3F67006C3BDD /* AppButton.swift in Sources */,
 				F443AB3827B93D5A00762E38 /* UserListModal.swift in Sources */,

@@ -9,4 +9,5 @@ struct AppConst {
     static let baseurl = "https://reqres.in/api/"
     static let LoginUrl = "login"
     static let usersListUrl = "users"
+    static let isLogedIn = "isLogedIn"
 }

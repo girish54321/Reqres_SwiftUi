@@ -17,15 +17,12 @@ struct LoginScreen: View {
     @State private var isPasswordShow: Bool = false
     @State private var isValidEmail: Bool = false
     
-    @State private var selection: String? = nil
-    
-    @State private var logedIn = false
+    @AppStorage(AppConst.isLogedIn) var isLogedIn: Bool = false
     
     @EnvironmentObject var viewModel: AlertViewModel
     
     var body: some View {
         VStack(alignment: .center, spacing: 4) {
-            NavigationLink(destination: HomeScreen(), tag: "MainApp", selection: $selection) { EmptyView() }
             VStack(alignment: .center,spacing: 8) {
                 Text("ReqRes App")
                     .appTestStyle()
@@ -62,9 +59,6 @@ struct LoginScreen: View {
                 .floatingStyle(ThemeTextFieldStyle())
                 .keyboardType(.emailAddress)
                 .frame(height: 70)
-                .onChange(of: emailText, perform: { newValue in
-                    print(emailText)
-                })
             FloatingLabelTextField(
                 $passwordText, placeholder: "Password",
                 editingChanged: { (isChanged) in
@@ -94,18 +88,14 @@ struct LoginScreen: View {
                 .isSecureTextEntry(!self.isPasswordShow)
                 .floatingStyle(ThemeTextFieldStyle())
                 .frame(height: 70)
-            Button(action: {
-                print(emailText)
-                print(passwordText)
-            }) {
-                AppButton(text: "Login", clicked: {
-//                    viewModel.alertToast = AlertToast(type: .complete(.green), title: "Completed!", subTitle: nil)
-//                    viewModel.alertToast =  AlertToast(type: .regular, title: "Some Text", subTitle: "Some Text")
-                    
-                    viewModel.alertToast = AlertToast(displayMode: .banner(.slide), type: .regular, title: "Message Sent!")
-                })
-            }
-            .padding(.top,16)
+            AppButton(text: "Login", clicked: {
+                if(emailText.isEmpty || passwordText.isEmpty){
+                    viewModel.alertToast = AlertToast(displayMode: .banner(.slide), type: .error(.red), title: "Email & Password are reqired",subTitle: "plase check error")
+                }else{
+                    UserLoginApi(email: emailText, password: passwordText)
+                }
+            })
+                .padding(.top,16)
             Spacer()
             NavigationLink(destination: CreateAccountScreen()) {
                 Text("Create Account")
@@ -114,9 +104,8 @@ struct LoginScreen: View {
         .padding()
         .navigationBarTitleDisplayMode(.large)
         .navigationTitle("Login")
-        .alert("User Loged In!", isPresented: $logedIn) {
-            Button("OK", role: .cancel) { }
-            Button("I know",role: .destructive){ }
+        .toast(isPresenting: $viewModel.show){
+            viewModel.alertToast
         }
     }
     
@@ -138,21 +127,22 @@ struct LoginScreen: View {
     }
     
     func UserLoginApi(email : String,password : String) {
+        viewModel.alertToast = AppMessage.loadindView
         let postdata: [String: Any] = [
             "email" : "eve.holt@reqres.in",
             "password":"cityslicka"
         ]
         AF.request("\(AppConst.baseurl)login",method: .post,parameters: postdata).validate().responseJSON { response in
-            print(response)
             if ApiError.checkApiError(response: response.response!){
-                print(response.data!)
-                print("All Doo")
                 guard let data = try? JSONDecoder().decode(LoginResponse.self, from: response.data! ) else {
                     print("Error: Couldn't decode data into LoginResponse")
                     return
                 }
                 print(data.token!)
-                selection = "MainApp"
+                withAnimation{
+                    isLogedIn = true
+                }
+                viewModel.show = false
             }
         }
     }
@@ -161,5 +151,6 @@ struct LoginScreen: View {
 struct LoginScreen_Previews: PreviewProvider {
     static var previews: some View {
         LoginScreen().previewDisplayName("iPhone 11")
+            .environmentObject(AlertViewModel())
     }
 }

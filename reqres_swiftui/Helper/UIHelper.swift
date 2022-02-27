@@ -49,15 +49,6 @@ extension Image {
     }
 }
 
-
-//Create an ObservableObject:
-class AlertViewModel: ObservableObject {
-    
-    @Published var show = false
-    @Published var alertToast = AlertToast(type: .regular, title: "SOME TITLE"){
-        didSet{
-            show.toggle()
-        }
-    }
-    
+struct AppMessage {
+    static let loadindView = AlertToast(type: .loading, title: "Loading")
 }
