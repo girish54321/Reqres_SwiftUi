@@ -13,19 +13,9 @@ struct AppButton: View {
     var leftIcon: Image?
     var rightIcon: Image?
     var whiteButton: Bool?
-    var clicked: (() -> Void) /// use closure for callback
-    ///
+    var clicked: (() -> Void)
+    
     var body: some View {
-//        Button(action: clicked) { /// call the closure here
-//            HStack {
-//                Text(text) /// your text
-//                icon /// your icon image
-//            }
-//            .foregroundColor(Color.green)
-//            .padding()
-//            .background(Color(.secondarySystemBackground))
-//            .cornerRadius(16)
-//        }
         Button(action: clicked) {
             HStack {
                 leftIcon ?? leftIcon
@@ -38,20 +28,12 @@ struct AppButton: View {
             .padding(12)
             .background(whiteButton != nil ? Color.white: Color.accentColor)
             .foregroundColor(  whiteButton != nil ? .black: .white)
-//            .border(Color.white, width: 2)
-           
             .overlay(
-                   RoundedRectangle(cornerRadius: 6)
-                       .stroke(Color.blue, lineWidth: 3)
-               )
+                RoundedRectangle(cornerRadius: 6)
+                    .stroke(Color.blue, lineWidth: 3)
+            )
             .cornerRadius(6)
-//            .overlay(
-//                    RoundedRectangle(cornerRadius: 16)
-//                        .stroke(Color.blue, lineWidth: 4)
-//                )
-
         }
-       
     }
     
     struct AppButton_Previews: PreviewProvider {

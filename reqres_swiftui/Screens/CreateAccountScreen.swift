@@ -119,7 +119,6 @@ struct CreateAccountScreen: View {
                         withAnimation {
                             self.isPasswordShow.toggle()
                         }
-                        
                     }) {
                         Image(systemName:self.isPasswordShow ? "eye.slash" : "eye.circle")
                             .inputIconStyle()

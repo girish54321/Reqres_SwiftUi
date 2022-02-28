@@ -45,7 +45,8 @@ struct HomeScreen: View {
                 })
                 .navigationBarTitle("My Friends", displayMode: .automatic)
                 .alert(isPresented: $showinglogOutAlert) {
-                    Alert(title: Text("Logout?"), message: Text("Are you sure?"),
+                    Alert(title: Text("Logout?"),
+                          message: Text("Are you sure?"),
                           primaryButton: .destructive(Text("Yes")){
                         print("Yes")
                         withAnimation{
@@ -88,7 +89,6 @@ struct HomeScreen: View {
     }
     
     func getUserList() {
-        print("do api call")
         viewModel.alertToast = AppMessage.loadindView
         let parameters: [String: Any] = [
             "page":"1",

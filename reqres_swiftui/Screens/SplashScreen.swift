@@ -28,29 +28,30 @@ struct SplashScreen: View {
                                 .font(.largeTitle)
                                 .fontWeight(.heavy)
                                 .foregroundColor(Color.white)
-                            Text( "Hold the tinsel—the rainbow eucalyptus tree doesn’t need decorations to appear festive for the holidays.")
+                            Text("Hold the tinsel—the rainbow eucalyptus tree doesn’t need decorations to appear festive for the holidays.")
                                 .foregroundColor(Color.white)
                                 .font(.footnote)
-                        } // VSTACK
+                        }
                         .padding(.horizontal)
                         Capsule()
                             .frame(height: 2)
                             .foregroundColor(Color.white.opacity(0.5))
                             .padding(.horizontal)
                         VStack (alignment: .center,spacing: 16) {
-                            AppButton(text: "Login Up",
-                                      whiteButton: true,
-                                      clicked: {
-                                selection = "A"
-                                
-                            })
-                            AppButton(text: "Sign Up",
-                                      clicked: {
-                                selection = "B"
-                            })
+                            AppButton(
+                                text: "Login Up",
+                                whiteButton: true,
+                                clicked: {
+                                    selection = "A"
+                                })
+                            AppButton(
+                                text: "Sign Up",
+                                clicked: {
+                                    selection = "B"
+                                })
                         }
                         .padding(.horizontal)
-                    } // VSTACK
+                    }
                     .offset(x: 0, y: 190)
                 }
             }

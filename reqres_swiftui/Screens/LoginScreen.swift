@@ -49,7 +49,6 @@ struct LoginScreen: View {
                         withAnimation {
                             self.isPasswordShow.toggle()
                         }
-                        
                     }) {
                         Image(systemName: emailText.isValid(.email) ? "checkmark.circle.fill":"exclamationmark.circle")
                             .inputIconStyle()
@@ -79,7 +78,6 @@ struct LoginScreen: View {
                         withAnimation {
                             self.isPasswordShow.toggle()
                         }
-                        
                     }) {
                         Image(systemName:self.isPasswordShow ? "eye.slash" : "eye.circle")
                             .inputIconStyle()
@@ -110,7 +108,7 @@ struct LoginScreen: View {
     }
     
     
-    func checkEmail() -> Bool{
+    func checkEmail() -> Bool {
         if(emailText.isValid(.email)){
             return true
         } else {
@@ -118,7 +116,7 @@ struct LoginScreen: View {
         }
     }
     
-    func checkPassword() -> Bool{
+    func checkPassword() -> Bool {
         if(passwordText.count > 5){
             return true
         } else {

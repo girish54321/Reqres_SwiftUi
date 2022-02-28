@@ -19,19 +19,7 @@ struct Userinfo: View {
                     .padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0))
                     .frame(width: 120, height: 120)
             }
-            //            .offset(x: 0, y: isAnimation ? 0 : -525)
-            //            .overlay(
-            //                Circle().stroke(.black)
-            //                    .scaleEffect(animationAmout)
-            //                    .opacity(2 - animationAmout)
-            //                    .animation(
-            //                        .easeOut(duration: 0.8)
-            //                            .repeatForever(autoreverses: false),
-            //                        value: animationAmout)
-            //            )
-            //            .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0.25), value: isAnimation)
             .onAppear{
-                print("gogogo")
                 isAnimation = true
                 animationAmout = 2.0
             }
@@ -44,10 +32,7 @@ struct Userinfo: View {
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
                     .padding(.trailing, 8)
-//                Button("Button title") {
-//                    isAnimation.toggle()
-//                }
-            } //: VSTACK
+            }
             .padding(.vertical,14)
             .opacity(isAnimation ? 1: 0)
             .animation(.easeIn(duration: 0.3), value: isAnimation)
