@@ -45,7 +45,7 @@ extension Image {
         self
             .resizable()
             .scaledToFit()
-            .frame(width: 24, height: 24)
+            .frame(width: 22, height: 22)
     }
 }
 

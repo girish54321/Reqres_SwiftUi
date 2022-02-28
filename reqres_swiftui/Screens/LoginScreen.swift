@@ -12,7 +12,7 @@ import AlertToast
 
 struct LoginScreen: View {
     
-    @State private var emailText: String = "girish@outlook.com"
+    @State private var emailText: String = ""
     @State private var passwordText: String = ""
     @State private var isPasswordShow: Bool = false
     @State private var isValidEmail: Bool = false
@@ -29,67 +29,29 @@ struct LoginScreen: View {
                 Text("Login To ResRes App made useing SwiftUI")
                     .font(.footnote)
             }
-            .padding(.bottom)
-            FloatingLabelTextField(
-                $emailText, placeholder: "Email",
-                editingChanged: { (isChanged) in
-                }) {
-                }
-                .addValidation(.init(condition: emailText.isValid(.email), errorMessage: "Invalid Email"))
-                .isShowError(true)
-                .errorColor(.red)
-                .leftView({
-                    Image(systemName:"heart.text.square")
-                        .inputIconStyle()
-                        .foregroundColor(checkEmail() ? .green : Color.primary)
-                        .animation(.default, value: checkEmail())
-                })
-                .rightView({
-                    Button(action: {
-                        withAnimation {
-                            self.isPasswordShow.toggle()
-                        }
-                    }) {
-                        Image(systemName: emailText.isValid(.email) ? "checkmark.circle.fill":"exclamationmark.circle")
-                            .inputIconStyle()
-                            .animation(.easeIn(duration: 3), value: checkEmail())
-                    }
-                })
-                .floatingStyle(ThemeTextFieldStyle())
-                .keyboardType(.emailAddress)
-                .frame(height: 70)
-            FloatingLabelTextField(
-                $passwordText, placeholder: "Password",
-                editingChanged: { (isChanged) in
-                    
-                }) {
-                }
-                .addValidation(.init(condition: emailText.isValid(.password), errorMessage: "Invalid Password"))
-                .isShowError(true)
-                .errorColor(.red)
-                .leftView({
-                    Image(systemName:"lock")
-                        .inputIconStyle()
-                        .foregroundColor(checkPassword() ? .green : Color.primary)
-                        .animation(.default, value: checkPassword())
-                })
-                .rightView({
-                    Button(action: {
-                        withAnimation {
-                            self.isPasswordShow.toggle()
-                        }
-                    }) {
-                        Image(systemName:self.isPasswordShow ? "eye.slash" : "eye.circle")
-                            .inputIconStyle()
-                    }
-                })
-                .isSecureTextEntry(!self.isPasswordShow)
-                .floatingStyle(ThemeTextFieldStyle())
-                .frame(height: 70)
+            .padding(.bottom, 24)
+            VStack(spacing: 16){
+                AppInputBox(
+                    text: emailText,
+                    leftIcon:"heart.text.square",
+                    rightIcon: "checkmark.circle.fill",
+                    placeHoldr: "Email"
+                )
+                AppInputBox(
+                    text: passwordText,
+                    leftIcon: "lock",
+                    rightIcon: "checkmark.circle.fill",
+                    placeHoldr: "Password"
+                )
+            }
             AppButton(text: "Login", clicked: {
                 if(emailText.isEmpty || passwordText.isEmpty){
-                    viewModel.alertToast = AlertToast(displayMode: .banner(.slide), type: .error(.red), title: "Email & Password are reqired",subTitle: "plase check error")
-                }else{
+                    viewModel.alertToast = AlertToast(
+                        displayMode: .banner(.slide),
+                        type: .error(.red),
+                        title: "Email & Password are reqired",
+                        subTitle: "plase check error")
+                } else {
                     UserLoginApi(email: emailText, password: passwordText)
                 }
             })

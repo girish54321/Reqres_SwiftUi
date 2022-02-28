@@ -10,6 +10,7 @@
 		1810B3CA27BE3F67006C3BDD /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1810B3C927BE3F67006C3BDD /* AppButton.swift */; };
 		1849957B27BD2CA500E7304E /* AppInputText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1849957A27BD2CA500E7304E /* AppInputText.swift */; };
 		1849957D27BD337800E7304E /* CreateAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1849957C27BD337800E7304E /* CreateAccountScreen.swift */; };
+		18E2991627CCEB4500D3A5D5 /* AppInputBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E2991527CCEB4500D3A5D5 /* AppInputBox.swift */; };
 		18F3110F27BCF07100335590 /* AppNetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3110E27BCF07100335590 /* AppNetworkImage.swift */; };
 		18F3111127BD130300335590 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3111027BD130300335590 /* LoginScreen.swift */; };
 		71453E3068EF1753EE118FE8 /* Pods_reqres_swiftui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE44542C1C0230BE66163820 /* Pods_reqres_swiftui.framework */; };
@@ -35,6 +36,7 @@
 		1810B3C927BE3F67006C3BDD /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		1849957A27BD2CA500E7304E /* AppInputText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInputText.swift; sourceTree = "<group>"; };
 		1849957C27BD337800E7304E /* CreateAccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountScreen.swift; sourceTree = "<group>"; };
+		18E2991527CCEB4500D3A5D5 /* AppInputBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInputBox.swift; sourceTree = "<group>"; };
 		18F3110E27BCF07100335590 /* AppNetworkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNetworkImage.swift; sourceTree = "<group>"; };
 		18F3111027BD130300335590 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		918F7F63D0EC9511222C10CA /* Pods-reqres_swiftui.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reqres_swiftui.debug.xcconfig"; path = "Target Support Files/Pods-reqres_swiftui/Pods-reqres_swiftui.debug.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				18F3110E27BCF07100335590 /* AppNetworkImage.swift */,
 				1849957A27BD2CA500E7304E /* AppInputText.swift */,
 				1810B3C927BE3F67006C3BDD /* AppButton.swift */,
+				18E2991527CCEB4500D3A5D5 /* AppInputBox.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				F4CE8FE827B93598007BCF37 /* reqres_swiftuiApp.swift in Sources */,
 				1849957B27BD2CA500E7304E /* AppInputText.swift in Sources */,
 				F426766B27C276B5004FDE3F /* SplashScreen.swift in Sources */,
+				18E2991627CCEB4500D3A5D5 /* AppInputBox.swift in Sources */,
 				F4CE8FF827B935CD007BCF37 /* HomeScreen.swift in Sources */,
 				F4124BA127CA4C6000D43E71 /* AppConst.swift in Sources */,
 				F443AB2627B93AF000762E38 /* userListItem.swift in Sources */,
