@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct AppInputBox: View {
-    
-    //    @State var emailText @State
-    //    var leftIcon: Image?
-    @State var text: String = "projectedValue"
+
     var leftIcon: String?
     var rightIcon: String?
     var placeHoldr: String
+    
+    var view: TextField<Text>?
     
     var body: some View {
         VStack {
@@ -29,7 +28,7 @@ struct AppInputBox: View {
                     Spacer()
                 }
                 VStack {
-                    TextField(placeHoldr, text: $text)
+                    view
                 }
                 if rightIcon != nil {
                     Image(systemName:"checkmark.circle.fill")
@@ -53,27 +52,24 @@ struct AppInputBox: View {
 }
 
 struct AppInputBox_Previews: PreviewProvider {
-    @State var emailText: String = "projectedValue"
+    @State static var emailText: String = "projectedValue"
     static var previews: some View {
         Group {
-            AppInputBox(text: "$emailText",
-                        leftIcon: "heart.text.square",
+            AppInputBox(leftIcon: "heart.text.square",
                         rightIcon: "checkmark.circle.fill",
+                        placeHoldr: "Placeholder",
+                        view: TextField("Plasw", text: $emailText))
+                .previewLayout(.sizeThatFits)
+                .padding()
+            AppInputBox(leftIcon: "heart.text.square",
                         placeHoldr: "Placeholder")
                 .previewLayout(.sizeThatFits)
                 .padding()
-            AppInputBox(text: "$emailText",
-                        leftIcon: "heart.text.square",
+            AppInputBox(rightIcon: "checkmark.circle.fill",
                         placeHoldr: "Placeholder")
                 .previewLayout(.sizeThatFits)
                 .padding()
-            AppInputBox(text: "$emailText",
-                        rightIcon: "checkmark.circle.fill",
-                        placeHoldr: "Placeholder")
-                .previewLayout(.sizeThatFits)
-                .padding()
-            AppInputBox(text: "$emailText",
-                        placeHoldr: "Placeholder")
+            AppInputBox(placeHoldr: "Placeholder")
                 .previewLayout(.sizeThatFits)
                 .padding()
         }

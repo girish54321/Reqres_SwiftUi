@@ -32,17 +32,31 @@ struct LoginScreen: View {
             .padding(.bottom, 24)
             VStack(spacing: 16){
                 AppInputBox(
-                    text: emailText,
                     leftIcon:"heart.text.square",
                     rightIcon: "checkmark.circle.fill",
-                    placeHoldr: "Email"
+                    placeHoldr: "Email",
+                    view: TextField("Email", text: $emailText)
                 )
                 AppInputBox(
-                    text: passwordText,
                     leftIcon: "lock",
                     rightIcon: "checkmark.circle.fill",
-                    placeHoldr: "Password"
+                    placeHoldr: "Password",
+                    view: TextField("Password", text: $passwordText)
                 )
+                
+                HStack {
+                    Spacer()
+                    Button(action: {}) {
+                        Text("Forgot Password")
+                            .background(
+                                Rectangle()
+                                    .fill(Color.accentColor)
+                                    .frame(height:4)
+                                    .cornerRadius(22)
+                                    .offset(x: 0, y:14)
+                            )
+                    }
+                }
             }
             AppButton(text: "Login", clicked: {
                 if(emailText.isEmpty || passwordText.isEmpty){

@@ -52,3 +52,4 @@ extension Image {
 struct AppMessage {
     static let loadindView = AlertToast(type: .loading, title: "Loading")
 }
+

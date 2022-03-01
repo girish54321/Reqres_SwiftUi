@@ -42,22 +42,22 @@ struct CreateAccountScreen: View {
             .padding(.bottom, 24)
             VStack(spacing: 16){
                 AppInputBox(
-                    text: emailText,
                     leftIcon:"heart.text.square",
                     rightIcon: "checkmark.circle.fill",
-                    placeHoldr: "Email"
+                    placeHoldr: "Email",
+                    view: TextField("Email", text: $emailText)
                 )
                 AppInputBox(
-                    text: passwordText,
                     leftIcon: "lock",
                     rightIcon: "checkmark.circle.fill",
-                    placeHoldr: "Password"
+                    placeHoldr: "Password",
+                    view: TextField("Password", text: $passwordText)
                 )
                 AppInputBox(
-                    text: confimPasswordText,
                     leftIcon: "lock",
                     rightIcon: "checkmark.circle.fill",
-                    placeHoldr: "Confim Password"
+                    placeHoldr: "Confim Password",
+                    view: TextField("Confim Password", text: $confimPasswordText)
                 )
             }
             AppButton(text: "Create Account", clicked: {
