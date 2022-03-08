@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct AppInputBox: View {
-
+    
     var leftIcon: String?
     var rightIcon: String?
     var placeHoldr: String
     
     var view: TextField<Text>?
+    var keyboard: Int?
     
     var body: some View {
         VStack {
@@ -28,7 +29,12 @@ struct AppInputBox: View {
                     Spacer()
                 }
                 VStack {
-                    view
+                    if keyboard != nil{
+                        view
+                            .keyboardType(UIKeyboardType(rawValue: keyboard!) ?? .default)
+                    } else {
+                        view
+                    }
                 }
                 if rightIcon != nil {
                     Image(systemName:"checkmark.circle.fill")

@@ -45,19 +45,22 @@ struct CreateAccountScreen: View {
                     leftIcon:"heart.text.square",
                     rightIcon: "checkmark.circle.fill",
                     placeHoldr: "Email",
-                    view: TextField("Email", text: $emailText)
+                    view: TextField("Email", text: $emailText),
+                    keyboard: AppKeyBoardType.emailAddress
                 )
                 AppInputBox(
                     leftIcon: "lock",
                     rightIcon: "checkmark.circle.fill",
                     placeHoldr: "Password",
-                    view: TextField("Password", text: $passwordText)
+                    view: TextField("Password", text: $passwordText),
+                    keyboard: AppKeyBoardType.default
                 )
                 AppInputBox(
                     leftIcon: "lock",
                     rightIcon: "checkmark.circle.fill",
                     placeHoldr: "Confim Password",
-                    view: TextField("Confim Password", text: $confimPasswordText)
+                    view: TextField("Confim Password", text: $confimPasswordText),
+                    keyboard: AppKeyBoardType.default
                 )
             }
             AppButton(text: "Create Account", clicked: {
