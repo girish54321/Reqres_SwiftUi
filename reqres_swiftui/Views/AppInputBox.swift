@@ -14,6 +14,7 @@ struct AppInputBox: View {
     var placeHoldr: String
     
     var view: TextField<Text>?
+    var passwordView: SecureField<Text>?
     var keyboard: Int?
     
     var state: Bool?
@@ -34,8 +35,10 @@ struct AppInputBox: View {
                     if keyboard != nil{
                         view
                             .keyboardType(UIKeyboardType(rawValue: keyboard!) ?? .default)
-                    } else {
+                    } else if view != nil {
                         view
+                    } else {
+                        passwordView
                     }
                 }
                 if rightIcon != nil {

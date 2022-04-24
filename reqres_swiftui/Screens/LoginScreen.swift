@@ -51,8 +51,7 @@ struct LoginScreen: View {
                     leftIcon: "lock",
                     rightIcon: isValidPassword ? "checkmark.circle.fill" : "x.circle",
                     placeHoldr: "Password",
-                    view: TextField("Password", text: $passwordText),
-                    keyboard: AppKeyBoardType.default,
+                    passwordView: SecureField("Password", text: $passwordText),
                     state: isValidPassword
                 )
                 .onChange(of: passwordText) { newValue in
