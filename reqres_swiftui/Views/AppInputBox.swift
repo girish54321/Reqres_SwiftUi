@@ -16,6 +16,8 @@ struct AppInputBox: View {
     var view: TextField<Text>?
     var keyboard: Int?
     
+    var state: Bool?
+    
     var body: some View {
         VStack {
             HStack (spacing:8) {
@@ -37,11 +39,11 @@ struct AppInputBox: View {
                     }
                 }
                 if rightIcon != nil {
-                    Image(systemName:"checkmark.circle.fill")
+                    Image(systemName:rightIcon ?? "")
                         .inputIconStyle()
                         .padding(.trailing,8)
-                        .foregroundColor(.green)
-                        .animation(.easeIn(duration: 3), value:rightIcon ?? "")
+                        .foregroundColor( state == nil ? .accentColor : state ?? true ? .green : .red)
+                        .animation(.easeIn(duration: 0.3), value:rightIcon ?? "")
                 } else {
                     Spacer()
                 }

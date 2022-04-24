@@ -29,6 +29,7 @@
 		F4CE8FEC27B9359A007BCF37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4CE8FEB27B9359A007BCF37 /* Assets.xcassets */; };
 		F4CE8FEF27B9359A007BCF37 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4CE8FEE27B9359A007BCF37 /* Preview Assets.xcassets */; };
 		F4CE8FF827B935CD007BCF37 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE8FF727B935CD007BCF37 /* HomeScreen.swift */; };
+		F4FC59242815693B00ED1F91 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC59232815693B00ED1F91 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		F4CE8FEB27B9359A007BCF37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4CE8FEE27B9359A007BCF37 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F4CE8FF727B935CD007BCF37 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		F4FC59232815693B00ED1F91 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				F443AB3527B93CFF00762E38 /* CodableBundleExtension.swift */,
 				F4A64FA927CA29D700DD68B7 /* UIHelper.swift */,
 				F4124BA027CA4C6000D43E71 /* AppConst.swift */,
+				F4FC59232815693B00ED1F91 /* Helper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				F4CE8FE827B93598007BCF37 /* reqres_swiftuiApp.swift in Sources */,
 				1849957B27BD2CA500E7304E /* AppInputText.swift in Sources */,
 				F426766B27C276B5004FDE3F /* SplashScreen.swift in Sources */,
+				F4FC59242815693B00ED1F91 /* Helper.swift in Sources */,
 				18E2991627CCEB4500D3A5D5 /* AppInputBox.swift in Sources */,
 				F4CE8FF827B935CD007BCF37 /* HomeScreen.swift in Sources */,
 				F4124BA127CA4C6000D43E71 /* AppConst.swift in Sources */,

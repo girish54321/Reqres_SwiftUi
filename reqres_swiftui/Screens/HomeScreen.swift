@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Alamofire
+import FloatingLabelTextFieldSwiftUI
 import AlertToast
 
 struct HomeScreen: View {
@@ -16,6 +17,7 @@ struct HomeScreen: View {
     
     @EnvironmentObject var viewModel: AlertViewModel
     @EnvironmentObject var appStateStorage: AppStateStorage
+    
     @State private var showinglogOutAlert = false
     @AppStorage(AppConst.isLogedIn) var isLogedIn: Bool = false
     
@@ -23,6 +25,7 @@ struct HomeScreen: View {
     @State private var searchText = ""
     @State private var isAnimating: Bool = false
     @State var didAppear = false
+    
     
     var body: some View {
         NavigationView {
@@ -76,15 +79,35 @@ struct HomeScreen: View {
                     return
                 }
                 let newArray = responseData?.data?.filter({ return $0.first_name?.contains(newValue) as! Bool })
+                
+                if newArray!.count < 1 {
+                    viewModel.alertToast = AlertToast(
+                        displayMode: .banner(.slide),
+                        type: .error(.red),
+                        title: "No user found",
+                        subTitle: "please check query")
+                }
+                
                 withAnimation{
                     userList?.data = newArray
                 }
             })
             .onAppear(perform: {
+                if !didAppear {
+                    viewModel.alertToast = AlertToast(
+                        displayMode: .banner(.slide),
+                        type: .error(.red),
+                        title: "Email & Password are required",
+                        subTitle: "please check error")
+                }
+                
                 withAnimation{
                     isAnimating = true
                 }
             })
+        }
+        .toast(isPresenting: $viewModel.show){
+            viewModel.alertToast
         }
     }
     

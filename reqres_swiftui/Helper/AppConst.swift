@@ -10,6 +10,7 @@ struct AppConst {
     static let LoginUrl = "login"
     static let usersListUrl = "users"
     static let isLogedIn = "isLogedIn"
+    static let emailPattern = #"^\S+@\S+\.\S+$"#
 }
 
 struct AppKeyBoardType {

@@ -16,6 +16,7 @@ struct LoginScreen: View {
     @State private var passwordText: String = ""
     @State private var isPasswordShow: Bool = false
     @State private var isValidEmail: Bool = false
+    @State private var isValidPassword : Bool = false
     
     @AppStorage(AppConst.isLogedIn) var isLogedIn: Bool = false
     
@@ -26,25 +27,40 @@ struct LoginScreen: View {
             VStack(alignment: .center,spacing: 8) {
                 Text("ReqRes App")
                     .appTestStyle()
-                Text("Login To ResRes App made useing SwiftUI")
+                Text("Login To ResRes App made using SwiftUI")
                     .font(.footnote)
             }
             .padding(.bottom, 24)
             VStack(spacing: 16){
                 AppInputBox(
                     leftIcon:"heart.text.square",
-                    rightIcon: "checkmark.circle.fill",
+                    rightIcon: isValidEmail ? "checkmark.circle.fill" : "x.circle",
                     placeHoldr: "Email",
                     view: TextField("Email", text: $emailText),
-                    keyboard: AppKeyBoardType.emailAddress
+                    keyboard: AppKeyBoardType.emailAddress,
+                    state: isValidEmail
                 )
+                .onChange(of: emailText) { newValue in
+                    let result = Helpers.isVaildEmailRegx(text: emailText)
+                    withAnimation {
+                        isValidEmail = result
+                        print(isValidEmail)
+                    }
+                }
                 AppInputBox(
                     leftIcon: "lock",
-                    rightIcon: "checkmark.circle.fill",
+                    rightIcon: isValidPassword ? "checkmark.circle.fill" : "x.circle",
                     placeHoldr: "Password",
                     view: TextField("Password", text: $passwordText),
-                    keyboard: AppKeyBoardType.default
+                    keyboard: AppKeyBoardType.default,
+                    state: isValidPassword
                 )
+                .onChange(of: passwordText) { newValue in
+                    let result = Helpers.isValidPassword(text: passwordText)
+                    withAnimation {
+                        isValidPassword = result
+                    }
+                }
                 HStack {
                     Spacer()
                     Button(action: {}) {
@@ -64,13 +80,13 @@ struct LoginScreen: View {
                     viewModel.alertToast = AlertToast(
                         displayMode: .banner(.slide),
                         type: .error(.red),
-                        title: "Email & Password are reqired",
-                        subTitle: "plase check error")
+                        title: "Email & Password are required",
+                        subTitle: "please check error")
                 } else {
                     UserLoginApi(email: emailText, password: passwordText)
                 }
             })
-                .padding(.top,16)
+            .padding(.top,16)
             Spacer()
             NavigationLink(destination: CreateAccountScreen()) {
                 Text("Create Account")

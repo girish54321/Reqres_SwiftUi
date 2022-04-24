@@ -65,7 +65,7 @@ struct CreateAccountScreen: View {
             }
             AppButton(text: "Create Account", clicked: {
                 if(emailText.isEmpty || passwordText.isEmpty){
-                    viewModel.alertToast = AlertToast(displayMode: .banner(.slide), type: .error(.red), title: "Email & Password are reqired",subTitle: "plase check error")
+                    viewModel.alertToast = AlertToast(displayMode: .banner(.slide), type: .error(.red), title: "Email & Password are required",subTitle: "please check error")
                 }else{
                     UserCreateAccountApi(email: emailText, password: passwordText)
                 }
