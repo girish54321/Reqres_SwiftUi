@@ -79,15 +79,7 @@ struct HomeScreen: View {
                     return
                 }
                 let newArray = responseData?.data?.filter({ return $0.first_name?.contains(newValue) as! Bool })
-                
-                if newArray!.count < 1 {
-                    viewModel.alertToast = AlertToast(
-                        displayMode: .banner(.slide),
-                        type: .error(.red),
-                        title: "No user found",
-                        subTitle: "please check query")
-                }
-                
+            
                 withAnimation{
                     userList?.data = newArray
                 }
@@ -105,9 +97,6 @@ struct HomeScreen: View {
                     isAnimating = true
                 }
             })
-        }
-        .toast(isPresenting: $viewModel.show){
-            viewModel.alertToast
         }
     }
     
