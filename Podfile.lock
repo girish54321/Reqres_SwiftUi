@@ -1,16 +1,28 @@
 PODS:
+  - Alamofire (5.5.0)
+  - AlertToast (1.3.7)
   - FloatingLabelTextFieldSwiftUI (4.2.1)
+  - NavigationStack (1.0.4)
 
 DEPENDENCIES:
+  - Alamofire
+  - AlertToast
   - FloatingLabelTextFieldSwiftUI
+  - NavigationStack
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - AlertToast
     - FloatingLabelTextFieldSwiftUI
+    - NavigationStack
 
 SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  AlertToast: 8c9d5efb2df6ea728b32b62bce99d876ec3e5393
   FloatingLabelTextFieldSwiftUI: 28c373de56a07ce49318bdeeed18781ee6f2528f
+  NavigationStack: c2fb4c71b89659481e8e0dfb20e533681dce084f
 
-PODFILE CHECKSUM: 058d94acd381a6ec50900131e5f95becac76d7f9
+PODFILE CHECKSUM: 9b50a96789d1ec2e3ae836870b7bad1b667d2e65
 
 COCOAPODS: 1.11.2
