@@ -99,9 +99,6 @@ struct CreateAccountScreen: View {
         .padding()
         .navigationBarTitleDisplayMode(.large)
         .navigationTitle("Create Account")
-        .toast(isPresenting: $viewModel.show){
-            viewModel.alertToast
-        }
     }
     
     // MARK: API Call

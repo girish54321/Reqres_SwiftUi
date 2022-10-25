@@ -76,11 +76,9 @@ struct LoginScreen: View {
             }
             AppButton(text: "Login", clicked: {
                 if(emailText.isEmpty || passwordText.isEmpty){
-                    viewModel.alertToast = AlertToast(
-                        displayMode: .banner(.slide),
-                        type: .error(.red),
+                    viewModel.alertToast = CreateAlert().createErrorAlert(
                         title: "Email & Password are required",
-                        subTitle: "please check error")
+                        subTitle: "please check error") as! AlertToast
                 } else {
                     UserLoginApi(email: emailText, password: passwordText)
                 }
@@ -94,9 +92,6 @@ struct LoginScreen: View {
         .padding()
         .navigationBarTitleDisplayMode(.large)
         .navigationTitle("Login")
-        .toast(isPresenting: $viewModel.show){
-            viewModel.alertToast
-        }
     }
     
     
@@ -140,7 +135,9 @@ struct LoginScreen: View {
 
 struct LoginScreen_Previews: PreviewProvider {
     static var previews: some View {
-        LoginScreen().previewDisplayName("iPhone 11")
-            .environmentObject(AlertViewModel())
+        NavigationView {
+            LoginScreen().previewDisplayName("iPhone 11")
+                .environmentObject(AlertViewModel())
+        }
     }
 }

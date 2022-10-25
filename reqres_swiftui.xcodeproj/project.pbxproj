@@ -17,7 +17,7 @@
 		F4124BA127CA4C6000D43E71 /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4124BA027CA4C6000D43E71 /* AppConst.swift */; };
 		F41EC4CF27CB75A400CC081B /* GlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41EC4CE27CB75A400CC081B /* GlobalState.swift */; };
 		F426766B27C276B5004FDE3F /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426766A27C276B5004FDE3F /* SplashScreen.swift */; };
-		F443AB2627B93AF000762E38 /* userListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AB2527B93AF000762E38 /* userListItem.swift */; };
+		F443AB2627B93AF000762E38 /* UserListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AB2527B93AF000762E38 /* UserListItem.swift */; };
 		F443AB2927B93BBD00762E38 /* userlist.json in Resources */ = {isa = PBXBuildFile; fileRef = F443AB2827B93BBD00762E38 /* userlist.json */; };
 		F443AB3627B93CFF00762E38 /* CodableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AB3527B93CFF00762E38 /* CodableBundleExtension.swift */; };
 		F443AB3827B93D5A00762E38 /* UserListModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AB3727B93D5A00762E38 /* UserListModal.swift */; };
@@ -45,7 +45,7 @@
 		F4124BA027CA4C6000D43E71 /* AppConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
 		F41EC4CE27CB75A400CC081B /* GlobalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalState.swift; sourceTree = "<group>"; };
 		F426766A27C276B5004FDE3F /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
-		F443AB2527B93AF000762E38 /* userListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userListItem.swift; sourceTree = "<group>"; };
+		F443AB2527B93AF000762E38 /* UserListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListItem.swift; sourceTree = "<group>"; };
 		F443AB2827B93BBD00762E38 /* userlist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = userlist.json; sourceTree = "<group>"; };
 		F443AB3527B93CFF00762E38 /* CodableBundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableBundleExtension.swift; sourceTree = "<group>"; };
 		F443AB3727B93D5A00762E38 /* UserListModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListModal.swift; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 		F4CE8FF627B935B7007BCF37 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F443AB2527B93AF000762E38 /* userListItem.swift */,
+				F443AB2527B93AF000762E38 /* UserListItem.swift */,
 				18F3110E27BCF07100335590 /* AppNetworkImage.swift */,
 				1849957A27BD2CA500E7304E /* AppInputText.swift */,
 				1810B3C927BE3F67006C3BDD /* AppButton.swift */,
@@ -320,7 +320,7 @@
 				18E2991627CCEB4500D3A5D5 /* AppInputBox.swift in Sources */,
 				F4CE8FF827B935CD007BCF37 /* HomeScreen.swift in Sources */,
 				F4124BA127CA4C6000D43E71 /* AppConst.swift in Sources */,
-				F443AB2627B93AF000762E38 /* userListItem.swift in Sources */,
+				F443AB2627B93AF000762E38 /* UserListItem.swift in Sources */,
 				1849957D27BD337800E7304E /* CreateAccountScreen.swift in Sources */,
 				F48CA81927CA6BCD007124FF /* AuthModal.swift in Sources */,
 				18F3110F27BCF07100335590 /* AppNetworkImage.swift in Sources */,

@@ -31,7 +31,7 @@ struct HomeScreen: View {
         NavigationView {
             VStack {
                 NavigationLink(destination: Userinfo(), tag: "UserInfo", selection: $selection) { EmptyView() }
-                List{
+                List {
                     ForEach(userList?.data ?? []) { item in
                         UserListItem(userNmae: item.first_name!, email: item.email!, imageUrl: item.avatar!)
                             .onTapGesture {

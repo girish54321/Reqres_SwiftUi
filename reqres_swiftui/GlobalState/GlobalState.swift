@@ -11,13 +11,19 @@ import AlertToast
 class AlertViewModel: ObservableObject {
     
     @Published var show = false
-    @Published var alertToast = AlertToast(type: .regular, title: "SOME TITLE"){
+    @Published var alertToast = AlertToast(displayMode: .banner(.slide), type: .regular, title: "SOME TITLE"){
         didSet{
             show.toggle()
         }
+    }
+    
+    func toggle() {
+        show.toggle()
     }
 }
 
 class AppStateStorage: ObservableObject {
     @Published var selectedUser: UserListResponseData?
 }
+
+
