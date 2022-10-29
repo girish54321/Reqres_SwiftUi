@@ -45,7 +45,9 @@ struct Userinfo: View {
 
 struct Userinfo_Previews: PreviewProvider {
     static var previews: some View {
-        Userinfo()
-            .environmentObject(AppStateStorage())
+        NavigationView {
+            Userinfo()
+                .environmentObject(AppStateStorage())
+        }
     }
 }

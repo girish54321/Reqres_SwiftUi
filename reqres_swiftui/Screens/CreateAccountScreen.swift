@@ -99,29 +99,34 @@ struct CreateAccountScreen: View {
         .padding()
         .navigationBarTitleDisplayMode(.large)
         .navigationTitle("Create Account")
-        .toast(isPresenting: $viewModel.show){
-            viewModel.alertToast
-        }
     }
     
     // MARK: API Call
     func UserCreateAccountApi(email : String,password : String) {
         viewModel.alertToast = AppMessage.loadindView
-        let postdata: [String: Any] = [
+        let postData: [String: Any] = [
             "email" : "eve.holt@reqres.in",
             "password":"cityslicka"
         ]
-        AF.request("\(AppConst.baseurl)register",method: .post,parameters: postdata).validate().responseDecodable(of: RegisterResponse.self) { (response) in
-            if ApiError.checkApiError(response: response.response!){
-                guard let data = try? JSONDecoder().decode(RegisterResponse.self, from: response.data! ) else {
-                    print("Error: Couldn't decode data into LoginResponse")
-                    return
-                }
-                print(data.token!)
+        AuthServices().createAccount(parameters: postData){
+            result in
+            switch result {
+            case .success(_):
                 withAnimation{
                     isLogedIn = true
                 }
-                viewModel.show = false
+            case .failure(let error):
+                switch error {
+                case .NetworkErrorAPIError(let errorMessage):
+                    viewModel.toggle()
+                    viewModel.errorMessage = errorMessage
+                case .BadURL:
+                    print("BadURL")
+                case .NoData:
+                    print("NoData")
+                case .DecodingErrpr:
+                    print("DecodingErrpr")
+                }
             }
         }
     }

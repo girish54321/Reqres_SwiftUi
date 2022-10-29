@@ -4,6 +4,8 @@
 //
 //  Created by Girish Parate on 26/02/22.
 //
+import AlertToast
+import SwiftUI
 
 struct AppConst {
     static let baseurl = "https://reqres.in/api/"
@@ -11,6 +13,10 @@ struct AppConst {
     static let usersListUrl = "users"
     static let isLogedIn = "isLogedIn"
     static let emailPattern = #"^\S+@\S+\.\S+$"#
+    
+    struct ApiConst {
+         let apiEndPoint = "https://reqres.in/api"
+    }
 }
 
 struct AppKeyBoardType {
@@ -37,4 +43,17 @@ struct AppKeyBoardType {
     static let webSearch = 10 // A default keyboard type with URL-oriented addition (shows space . prominently).
 
     static let asciiCapableNumberPad = 11 // A number pad (0-9) that will always be ASCII digits.
+}
+
+
+class CreateAlert {
+    
+    func createErrorAlert(title: String, subTitle: String?) -> any View {
+        let alertToast = AlertToast(
+            displayMode: .banner(.slide),
+            type: .error(.red),
+            title: title,
+            subTitle: subTitle)
+        return alertToast
+    }
 }

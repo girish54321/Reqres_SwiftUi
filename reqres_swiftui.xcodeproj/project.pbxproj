@@ -17,11 +17,13 @@
 		F4124BA127CA4C6000D43E71 /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4124BA027CA4C6000D43E71 /* AppConst.swift */; };
 		F41EC4CF27CB75A400CC081B /* GlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41EC4CE27CB75A400CC081B /* GlobalState.swift */; };
 		F426766B27C276B5004FDE3F /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426766A27C276B5004FDE3F /* SplashScreen.swift */; };
-		F443AB2627B93AF000762E38 /* userListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AB2527B93AF000762E38 /* userListItem.swift */; };
+		F443AB2627B93AF000762E38 /* UserListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AB2527B93AF000762E38 /* UserListItem.swift */; };
 		F443AB2927B93BBD00762E38 /* userlist.json in Resources */ = {isa = PBXBuildFile; fileRef = F443AB2827B93BBD00762E38 /* userlist.json */; };
 		F443AB3627B93CFF00762E38 /* CodableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AB3527B93CFF00762E38 /* CodableBundleExtension.swift */; };
 		F443AB3827B93D5A00762E38 /* UserListModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AB3727B93D5A00762E38 /* UserListModal.swift */; };
 		F443AB3A27B94A4E00762E38 /* Userinfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AB3927B94A4E00762E38 /* Userinfo.swift */; };
+		F48836DC290972F400FF2276 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48836DB290972F400FF2276 /* AuthServices.swift */; };
+		F48836DE2909730400FF2276 /* AuthApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48836DD2909730400FF2276 /* AuthApiEndpoint.swift */; };
 		F48CA81727CA67F0007124FF /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CA81627CA67F0007124FF /* ApiError.swift */; };
 		F48CA81927CA6BCD007124FF /* AuthModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CA81827CA6BCD007124FF /* AuthModal.swift */; };
 		F4A64FAA27CA29D700DD68B7 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A64FA927CA29D700DD68B7 /* UIHelper.swift */; };
@@ -29,6 +31,9 @@
 		F4CE8FEC27B9359A007BCF37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4CE8FEB27B9359A007BCF37 /* Assets.xcassets */; };
 		F4CE8FEF27B9359A007BCF37 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4CE8FEE27B9359A007BCF37 /* Preview Assets.xcassets */; };
 		F4CE8FF827B935CD007BCF37 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE8FF727B935CD007BCF37 /* HomeScreen.swift */; };
+		F4E0C4B82908212400A486E4 /* RestAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C4B72908212400A486E4 /* RestAPIClient.swift */; };
+		F4E0C4BA290821B000A486E4 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C4B9290821B000A486E4 /* UserService.swift */; };
+		F4E0C4BC290821C600A486E4 /* UserDataApiEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C4BB290821C600A486E4 /* UserDataApiEndPoint.swift */; };
 		F4FC59242815693B00ED1F91 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC59232815693B00ED1F91 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,11 +50,13 @@
 		F4124BA027CA4C6000D43E71 /* AppConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
 		F41EC4CE27CB75A400CC081B /* GlobalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalState.swift; sourceTree = "<group>"; };
 		F426766A27C276B5004FDE3F /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
-		F443AB2527B93AF000762E38 /* userListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userListItem.swift; sourceTree = "<group>"; };
+		F443AB2527B93AF000762E38 /* UserListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListItem.swift; sourceTree = "<group>"; };
 		F443AB2827B93BBD00762E38 /* userlist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = userlist.json; sourceTree = "<group>"; };
 		F443AB3527B93CFF00762E38 /* CodableBundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableBundleExtension.swift; sourceTree = "<group>"; };
 		F443AB3727B93D5A00762E38 /* UserListModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListModal.swift; sourceTree = "<group>"; };
 		F443AB3927B94A4E00762E38 /* Userinfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Userinfo.swift; sourceTree = "<group>"; };
+		F48836DB290972F400FF2276 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
+		F48836DD2909730400FF2276 /* AuthApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApiEndpoint.swift; sourceTree = "<group>"; };
 		F48CA81627CA67F0007124FF /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		F48CA81827CA6BCD007124FF /* AuthModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModal.swift; sourceTree = "<group>"; };
 		F4A64FA927CA29D700DD68B7 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
@@ -58,6 +65,9 @@
 		F4CE8FEB27B9359A007BCF37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4CE8FEE27B9359A007BCF37 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F4CE8FF727B935CD007BCF37 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		F4E0C4B72908212400A486E4 /* RestAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPIClient.swift; sourceTree = "<group>"; };
+		F4E0C4B9290821B000A486E4 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		F4E0C4BB290821C600A486E4 /* UserDataApiEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataApiEndPoint.swift; sourceTree = "<group>"; };
 		F4FC59232815693B00ED1F91 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +133,11 @@
 			isa = PBXGroup;
 			children = (
 				F48CA81627CA67F0007124FF /* ApiError.swift */,
+				F4E0C4B72908212400A486E4 /* RestAPIClient.swift */,
+				F4E0C4B9290821B000A486E4 /* UserService.swift */,
+				F4E0C4BB290821C600A486E4 /* UserDataApiEndPoint.swift */,
+				F48836DB290972F400FF2276 /* AuthServices.swift */,
+				F48836DD2909730400FF2276 /* AuthApiEndpoint.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -184,7 +199,7 @@
 		F4CE8FF627B935B7007BCF37 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F443AB2527B93AF000762E38 /* userListItem.swift */,
+				F443AB2527B93AF000762E38 /* UserListItem.swift */,
 				18F3110E27BCF07100335590 /* AppNetworkImage.swift */,
 				1849957A27BD2CA500E7304E /* AppInputText.swift */,
 				1810B3C927BE3F67006C3BDD /* AppButton.swift */,
@@ -309,18 +324,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				F443AB3627B93CFF00762E38 /* CodableBundleExtension.swift in Sources */,
+				F4E0C4B82908212400A486E4 /* RestAPIClient.swift in Sources */,
 				F41EC4CF27CB75A400CC081B /* GlobalState.swift in Sources */,
 				18F3111127BD130300335590 /* LoginScreen.swift in Sources */,
+				F4E0C4BC290821C600A486E4 /* UserDataApiEndPoint.swift in Sources */,
 				1810B3CA27BE3F67006C3BDD /* AppButton.swift in Sources */,
 				F443AB3827B93D5A00762E38 /* UserListModal.swift in Sources */,
 				F4CE8FE827B93598007BCF37 /* reqres_swiftuiApp.swift in Sources */,
 				1849957B27BD2CA500E7304E /* AppInputText.swift in Sources */,
+				F48836DC290972F400FF2276 /* AuthServices.swift in Sources */,
 				F426766B27C276B5004FDE3F /* SplashScreen.swift in Sources */,
 				F4FC59242815693B00ED1F91 /* Helper.swift in Sources */,
 				18E2991627CCEB4500D3A5D5 /* AppInputBox.swift in Sources */,
+				F48836DE2909730400FF2276 /* AuthApiEndpoint.swift in Sources */,
 				F4CE8FF827B935CD007BCF37 /* HomeScreen.swift in Sources */,
 				F4124BA127CA4C6000D43E71 /* AppConst.swift in Sources */,
-				F443AB2627B93AF000762E38 /* userListItem.swift in Sources */,
+				F443AB2627B93AF000762E38 /* UserListItem.swift in Sources */,
+				F4E0C4BA290821B000A486E4 /* UserService.swift in Sources */,
 				1849957D27BD337800E7304E /* CreateAccountScreen.swift in Sources */,
 				F48CA81927CA6BCD007124FF /* AuthModal.swift in Sources */,
 				18F3110F27BCF07100335590 /* AppNetworkImage.swift in Sources */,

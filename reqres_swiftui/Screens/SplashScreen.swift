@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
-
+import AlertToast
 
 struct SplashScreen: View {
     
     @State private var selection: String? = nil
     @State private var isAnimating: Bool = false
+    
+    @EnvironmentObject var viewModel: AlertViewModel
     
     var body: some View {
         NavigationView {
@@ -62,6 +64,12 @@ struct SplashScreen: View {
                 isAnimating = true
             }
         })
+        .toast(isPresenting: $viewModel.show){
+            viewModel.alertToast
+        }
+        .alert(isPresented: $viewModel.showAlert) { () -> Alert in
+            Alert(title: Text("Error"), message: Text(viewModel.errorMessage))
+        }
     }
 }
 

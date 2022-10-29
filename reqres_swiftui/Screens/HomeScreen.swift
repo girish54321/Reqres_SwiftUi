@@ -31,12 +31,18 @@ struct HomeScreen: View {
         NavigationView {
             VStack {
                 NavigationLink(destination: Userinfo(), tag: "UserInfo", selection: $selection) { EmptyView() }
-                List{
+                List {
                     ForEach(userList?.data ?? []) { item in
                         UserListItem(userNmae: item.first_name!, email: item.email!, imageUrl: item.avatar!)
                             .onTapGesture {
                                 appStateStorage.selectedUser = item
                                 selection = "UserInfo"
+                            }
+                            .onAppear {
+                                if item == userList?.data?.last {
+                                    print("On onAppear")
+                                    loadMoreUsers()
+                                }
                             }
                     }
                 }
@@ -79,7 +85,7 @@ struct HomeScreen: View {
                     return
                 }
                 let newArray = responseData?.data?.filter({ return $0.first_name?.contains(newValue) as! Bool })
-            
+                
                 withAnimation{
                     userList?.data = newArray
                 }
@@ -100,21 +106,47 @@ struct HomeScreen: View {
         }
     }
     
+    func loadMoreUsers(){
+        if(responseData != nil && responseData?.page ?? 0 <= responseData?.total_pages ?? 1){
+            getUserList()
+        }
+    }
+    
     func getUserList() {
+        print("Dping API call")
         viewModel.alertToast = AppMessage.loadindView
         let parameters: [String: Any] = [
             "page":"1",
             "per_page":"55"
         ]
-        AF.request(AppConst.baseurl+AppConst.usersListUrl,method: .get,parameters: parameters).validate().responseDecodable(of: UserListResponse.self) { (response) in
-            if ApiError.checkApiError(response: response.response!){
-                guard let response = try? JSONDecoder().decode(UserListResponse.self, from: response.data! ) else {
-                    print("Error: Couldn't decode data into LoginResponse")
-                    return
+        UserServices().getUserList(parameters: parameters){
+            result in
+            viewModel.show = false
+            switch result {
+            case .success(let data):
+                if(self.userList == nil){
+                    self.userList = data
+                    self.responseData = data
+                } else {
+                    self.userList?.data?.append(contentsOf: data.data!)
+                    self.userList?.page = data.page! + 1
+                    self.userList?.total_pages = data.total_pages
+                    
+                    self.responseData?.data?.append(contentsOf: data.data!)
+                    self.responseData?.page = data.page! + 1
+                    self.responseData?.total_pages = data.total_pages
                 }
-                userList = response
-                responseData = response
-                viewModel.show = false
+            case .failure(let error):
+                switch error {
+                case .NetworkErrorAPIError(let errorMessage):
+                    print(errorMessage)
+                case .BadURL:
+                    print("BadURL")
+                case .NoData:
+                    print("NoData")
+                case .DecodingErrpr:
+                    print("DecodingErrpr")
+                }
             }
         }
     }
