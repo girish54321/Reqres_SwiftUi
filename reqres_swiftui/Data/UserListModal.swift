@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct UserListResponseData : Codable, Identifiable{
+struct UserListResponseData : Codable, Identifiable, Equatable {
     let id : Int?
     let email : String?
     var first_name : String?
@@ -15,12 +15,12 @@ struct UserListResponseData : Codable, Identifiable{
 }
 
 struct UserListResponse : Codable {
-    let page : Int?
-    let per_page : Int?
-    let total : Int?
-    let total_pages : Int?
+    var page : Int?
+    var per_page : Int?
+    var total : Int?
+    var total_pages : Int?
     var data : [UserListResponseData]?
-    let support : Support?
+    var support : Support?
 }
 
 struct Support : Codable{

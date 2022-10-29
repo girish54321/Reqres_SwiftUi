@@ -67,6 +67,9 @@ struct SplashScreen: View {
         .toast(isPresenting: $viewModel.show){
             viewModel.alertToast
         }
+        .alert(isPresented: $viewModel.showAlert) { () -> Alert in
+            Alert(title: Text("Error"), message: Text(viewModel.errorMessage))
+        }
     }
 }
 

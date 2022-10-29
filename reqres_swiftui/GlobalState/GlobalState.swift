@@ -20,6 +20,13 @@ class AlertViewModel: ObservableObject {
     func toggle() {
         show.toggle()
     }
+    
+    @Published var showAlert = false
+    @Published var errorMessage = "" {
+        didSet {
+            showAlert.toggle()
+        }
+    }
 }
 
 class AppStateStorage: ObservableObject {

@@ -13,6 +13,10 @@ struct AppConst {
     static let usersListUrl = "users"
     static let isLogedIn = "isLogedIn"
     static let emailPattern = #"^\S+@\S+\.\S+$"#
+    
+    struct ApiConst {
+         let apiEndPoint = "https://reqres.in/api"
+    }
 }
 
 struct AppKeyBoardType {

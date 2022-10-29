@@ -18,6 +18,8 @@ struct LoginScreen: View {
     @State private var isValidEmail: Bool = false
     @State private var isValidPassword : Bool = false
     
+    @State private var showingAlert = false
+    
     @AppStorage(AppConst.isLogedIn) var isLogedIn: Bool = false
     
     @EnvironmentObject var viewModel: AlertViewModel
@@ -113,21 +115,29 @@ struct LoginScreen: View {
     
     func UserLoginApi(email : String,password : String) {
         viewModel.alertToast = AppMessage.loadindView
-        let postdata: [String: Any] = [
+        let postData: [String: Any] = [
             "email" : "eve.holt@reqres.in",
             "password":"cityslicka"
         ]
-        AF.request("\(AppConst.baseurl)login",method: .post,parameters: postdata).validate().responseJSON { response in
-            if ApiError.checkApiError(response: response.response!){
-                guard let data = try? JSONDecoder().decode(LoginResponse.self, from: response.data! ) else {
-                    print("Error: Couldn't decode data into LoginResponse")
-                    return
-                }
-                print(data.token!)
+        AuthServices().userLogin(parameters: postData){
+            result in
+            switch result {
+            case .success(_):
                 withAnimation{
                     isLogedIn = true
                 }
-                viewModel.show = false
+            case .failure(let error):
+                switch error {
+                case .NetworkErrorAPIError(let errorMessage):
+                    viewModel.toggle()
+                    viewModel.errorMessage = errorMessage
+                case .BadURL:
+                    print("BadURL")
+                case .NoData:
+                    print("NoData")
+                case .DecodingErrpr:
+                    print("DecodingErrpr")
+                }
             }
         }
     }
